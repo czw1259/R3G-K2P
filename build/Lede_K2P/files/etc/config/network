@@ -6,8 +6,8 @@ config interface 'loopback'
 	option netmask '255.0.0.0'
 
 config globals 'globals'
+	option ula_prefix 'fd95:4bd9:98b4::/48'
 	option packet_steering '1'
-	option ula_prefix 'fdb4:fea7:ee1f::/48'
 
 config interface 'lan'
 	option type 'bridge'
@@ -15,25 +15,9 @@ config interface 'lan'
 	option proto 'static'
 	option netmask '255.255.255.0'
 	option ip6assign '60'
-	option ipaddr '192.168.4.1'
-
-config device 'lan_eth0_1_dev'
-	option name 'eth0.1'
-	option macaddr 'fc:7c:02:cd:73:8d'
-
-config interface 'wan'
-	option ifname 'eth0.2'
-	option _orig_ifname 'eth0.2'
-	option _orig_bridge 'false'
-	option proto 'pppoe'
-	option username 'cd02887279488'
-	option password '87279488'
-	option ipv6 'auto'
-	option keepalive '0'
-
-config device 'wan_eth0_2_dev'
-	option name 'eth0.2'
-	option macaddr 'fc:7c:02:cd:73:8c'
+	option ipaddr '192.168.4.4'
+	option gateway '192.168.4.1'
+	option dns '192.168.4.1'
 
 config switch
 	option name 'switch0'
@@ -43,10 +27,6 @@ config switch
 config switch_vlan
 	option device 'switch0'
 	option vlan '1'
-	option ports '0 1 2 3 6t'
-
-config switch_vlan
-	option device 'switch0'
-	option vlan '2'
-	option ports '4 6t'
+	option ports '0 1 2 3 4 6t'
+	option vid '1'
 
