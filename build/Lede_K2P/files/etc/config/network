@@ -11,13 +11,15 @@ config globals 'globals'
 
 config interface 'lan'
 	option type 'bridge'
-	option ifname 'eth0.1'
 	option proto 'static'
 	option netmask '255.255.255.0'
 	option ip6assign '60'
 	option ipaddr '192.168.4.4'
 	option gateway '192.168.4.1'
 	option dns '192.168.4.1'
+	option _orig_ifname 'eth0.1 ra0 rax0'
+	option _orig_bridge 'true'
+	option ifname 'eth0 eth0.1 eth1'
 
 config switch
 	option name 'switch0'
