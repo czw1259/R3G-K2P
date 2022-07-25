@@ -23,7 +23,7 @@ sed -i "/uci commit system/i\uci set system.@system[0].hostname='OpenWrt'" $ZZZ 
 
 sed -i '/CYXluq4wUazHjmCDBCqXF/d' $ZZZ                                                             # 设置密码为空
 
-sed -i 's/PATCHVER=5.10/PATCHVER=5.15/g' target/linux/Makefile/Makefile                               # 修改内核版本为4.19
+sed -i 's/PATCHVER=5.4/PATCHVER=5.15/g' target/linux/Makefile/Makefile                               # 修改内核版本为4.19
 
 # 修改插件名字
 sed -i 's/"aMule设置"/"电驴下载"/g' `grep "aMule设置" -rl ./`
